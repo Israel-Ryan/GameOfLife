@@ -43,15 +43,15 @@ public class HelloApplication extends Application {
         gameGrid.setStyle("-fx-background-color: white; -fx-grid-lines-visible: true");
 
         //  Cell Logic (Correct, no change needed)
-        for(int i = 0; i < gameBoard.length; i++) {
-            for(int j = 0; j < gameBoard[i].length; j++) {
+        for (int i = 0; i < gameBoard.length; i++) {
+            for (int j = 0; j < gameBoard[i].length; j++) {
                 gameBoard[i][j] = new Cell();
             }
         }
 
         // Button Adding  (Moved for correct FXML loading timing)
-        for(int i = 0; i < gameBoard.length; i++) {
-            for(int j = 0; j < gameBoard[i].length; j++) {
+        for (int i = 0; i < gameBoard.length; i++) {
+            for (int j = 0; j < gameBoard[i].length; j++) {
 
                 Button button = new Button();
                 button.setOnAction(this::handleButtonClick);
@@ -84,7 +84,7 @@ public class HelloApplication extends Application {
         int col = GridPane.getColumnIndex(clickedButton);
         Cell correspondingCell = gameBoard[row][col];
 
-        if(correspondingCell.isAlive()) {
+        if (correspondingCell.isAlive()) {
             clickedButton.setBackground(Background.fill(Color.WHITE));
             correspondingCell.toggleState();
         } else {
